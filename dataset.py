@@ -1,7 +1,6 @@
 import os
 import torch
 import pandas as pd
-import torchvision
 import numpy as np
 
 
