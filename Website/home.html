@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+    <link rel="stylesheet" href="style.css">
+    <title>BeCoSeva</title>
+    <link rel="shortcut icon" type="image/jpg" href="Images/Logo.svg"/>
+</head>
+<body>
+    <!--Mobile Nav Start-->
+    <div class="mobile-nav-wrapper" id="mobile-nav-wrapper">
+        <div class="mobile-nav">
+            <div class="menu-items">
+                <a href="" class="link mNavLink" >About Us</a>
+                <a href="" class="link mNavLink">Events</a>
+                <a href="" class="link mNavLink">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <!--Mobile Nav End-->
+    <nav id = "nav-bar" style="position: fixed;">
+        <div class="container">
+            <a href="home.html" class="logo"><img src="Images/Logo.svg" alt="Logo" class="logo-image"><div class="logo-text">ShareSpace</div></a>
+            <div class="menu-items" id="desktop">
+                <a href="#about-us" class="link">About Us</a>
+                <a href="" class="link">Contact Us</a>
+            </div>
+            <div class="nav-icon" onclick="mobileNavTrigger()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="callOfAction">
+        <nav>
+        </nav>
+        <div class="container coa">
+            <div class="coa-content">
+                <div class="main-text" >See how your <br> picture looks!</div>
+                <form class="newsletter" action="" style="width: 100%; padding-top: 50px; padding-bottom: 50px;" >
+                    <input type="text" placeholder="Paste Image Link Here" class="input-field">
+                    <input type="submit" value="Submit" class="submit-button">
+                </form>
+                <div class="play-video-wrapper">
+                    <a href="" class="button" style="margin-right: 60px;"><span>Learn More </span></a>
+                </div>
+                <div class="social-link-wrapper">
+                    <a href="" class="link">YouTube</a>
+                    <div class="division-dot">
+                        <svg style="margin-bottom: 3px;" width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="2" cy="2" r="2" fill="currentColor"/>
+                        </svg>                            
+                    </div>
+                    <a href="" class="link">Facebook</a>
+                    <div class="division-dot">
+                        <svg style="margin-bottom: 3px;" width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="2" cy="2" r="2" fill="currentColor"/>
+                        </svg>                            
+                    </div>
+                    <a href="" class="link">Instagram</a>
+                </div>
+            </div>
+            <div class="coa-image"></div>
+        </div>
+    </div>
+   
+    <footer>
+        <div class="container" style="height: 2px; background-color: rgb(211, 203, 185);"></div>
+        <div class="footer-credit">
+            <p style="text-align: center; font-size: 12px;">Designed with love ❤️ by Kalyan</p>
+        </div>
+    </footer>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+    <script  src="slider.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.nav-icon').click(function(){
+                $(this).toggleClass('open');
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
+            document.getElementById("nav-bar").classList.add("scrolled");
+        } 
+        else {
+            document.getElementById("nav-bar").classList.remove("scrolled");
+        }
+        }
+
+        const mobibleNav = document.querySelector('#mobile-nav-wrapper');
+        let links = document.getElementsByClassName('mNavLink');
+
+        function mobileNavTrigger() {
+            if(mobibleNav.classList.contains('active')) {
+                mobibleNav.classList.remove('active');
+                document.getElementById("nav-bar").classList.remove("noBlur");
+                for(var i = 0; i < links.length; i++)
+                {
+                    links[i].classList.remove("active-mlink");
+                }
+            }
+            else {
+                mobibleNav.classList.add('active');
+                document.getElementById("nav-bar").classList.add("noBlur");
+                for(var i = 0; i < 3; i++)
+                {
+                    links[i].classList.add("active-mlink");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
